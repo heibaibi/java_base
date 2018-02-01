@@ -135,4 +135,26 @@ public class ThreadTest {
             System.out.println("主线程休眠异常");
         }
     }
+
+    /**
+     * 这些方法都是在 同步中才有效。同时这些方法在使用时必须标明所属锁，这样才可以明确出这些方法操作的到底是哪个锁上的线程。
+     */
+    @Test
+    public void  testThreadCommunication(){
+        ThreadService threadService = new ThreadService("ABC");
+        ThreadServiceInput threadServiceInput = new ThreadServiceInput(threadService);
+        ThreadServiceOutput threadServiceOutput = new ThreadServiceOutput(threadService);
+        Thread input = new Thread(threadServiceInput);
+        Thread ouput = new Thread(threadServiceOutput);
+
+        input.start();
+        ouput.start();
+
+        try {
+            Thread.sleep(700);
+        } catch (Exception e) {
+            System.out.println("主线程休眠异常");
+        }
+    }
+
 }
