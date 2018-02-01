@@ -141,7 +141,7 @@ public class ThreadTest {
      */
     @Test
     public void  testThreadCommunication(){
-        ThreadService threadService = new ThreadService("ABC");
+        ThreadService threadService = new ThreadService("DBF");
         ThreadServiceInput threadServiceInput = new ThreadServiceInput(threadService);
         ThreadServiceOutput threadServiceOutput = new ThreadServiceOutput(threadService);
         Thread input = new Thread(threadServiceInput);
