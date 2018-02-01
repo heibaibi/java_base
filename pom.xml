@@ -5,11 +5,12 @@
     <artifactId>java_base</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>java_base Maven Webapp</name>
+    <name>java_base</name>
     <url>http://maven.apache.org</url>
 
     <properties>
         <junitVersion>4.10</junitVersion>
+        <cglibVersion>3.2.5</cglibVersion>
     </properties>
 
     <dependencies>
@@ -17,10 +18,29 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junitVersion}</version>
-            <scope>test</scope>
+            <!--<scope>test</scope>-->
         </dependency>
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglibVersion}</version>
+        </dependency>
+
     </dependencies>
+
     <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+
         <finalName>java_base</finalName>
     </build>
 </project>
