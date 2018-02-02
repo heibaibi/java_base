@@ -15,13 +15,16 @@ public class ThreadServiceOutput implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if(!threadService.flag){
+            if(threadService.flag){
                 try {
                     threadService.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
+
+            System.out.println(Thread.currentThread().getName()+"----"+System.currentTimeMillis());
+
             System.out.println(threadService.toString());
             threadService.flag=true;
             threadService.notifyAll();

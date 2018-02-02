@@ -151,7 +151,7 @@ public class ThreadTest {
         ouput.start();
 
         try {
-            Thread.sleep(700);
+            Thread.sleep(300);
         } catch (Exception e) {
             System.out.println("主线程休眠异常");
         }

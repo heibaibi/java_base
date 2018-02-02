@@ -15,7 +15,7 @@ public class ThreadServiceInput implements Runnable {
 //            只会出现返回值为null，因为有可能是输出先执行。
             synchronized (threadService) {
 //               此使已经拿到锁，实际其他线程都已经在等待了。
-                if(threadService.flag){
+                if(!threadService.flag){
                     try {
                         threadService.wait();
                     } catch (InterruptedException e) {
@@ -23,14 +23,15 @@ public class ThreadServiceInput implements Runnable {
                     }
                 }
                 if (i % 2 == 0) {
+                    System.out.println(Thread.currentThread().getName()+"----"+System.currentTimeMillis());
                     threadService.setName("无极");
                     threadService.setAddress("陈凯歌");
                 } else {
+                    System.out.println(Thread.currentThread().getName()+"----"+System.currentTimeMillis());
                     threadService.setName("霸王别姬");
                     threadService.setAddress("忘了叫什么名字");
                 }
                 i++;
-
                 threadService.flag=false;
                 threadService.notifyAll();
             }

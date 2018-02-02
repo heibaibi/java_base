@@ -7,7 +7,7 @@ public class ThreadService {
 //    测试线程通信用的代码。
     private String lockObject;
 
-    Boolean flag=false;
+    Boolean flag=true;
 
     private String address;
 
