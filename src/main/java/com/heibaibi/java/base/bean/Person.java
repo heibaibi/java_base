@@ -1,11 +1,23 @@
 package com.heibaibi.java.base.bean;
 
+import java.util.Date;
+
 public class Person {
     public String name;
     public Integer age;
     public String address;
+    public Date birthDate;
 
     private String height;
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
     public String getHeight() {
         return height;
     }
@@ -88,6 +100,7 @@ public class Person {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", address='" + address + '\'' +
+                ", birthDate=" + birthDate +
                 ", height='" + height + '\'' +
                 '}';
     }

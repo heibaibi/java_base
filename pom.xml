@@ -11,9 +11,12 @@
     <properties>
         <junitVersion>4.10</junitVersion>
         <cglibVersion>3.2.5</cglibVersion>
+        <fastjsonVersion>1.2.46</fastjsonVersion>
+        <commonIoVersion>2.6</commonIoVersion>
     </properties>
 
     <dependencies>
+        <!--junit测试jar包，在此仅仅因为做单元测试-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -21,27 +24,31 @@
             <!--<scope>test</scope>-->
         </dependency>
 
+        <!-- cglib动态代理jar包-->
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
             <version>${cglibVersion}</version>
         </dependency>
 
+        <!--阿里巴巴的Json操作工具类，用一句来概括，很强大而且快-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.42</version>
+            <version>${fastjsonVersion}</version>
         </dependency>
 
+        <!-- Apache的文件操作工具类，主要包含输入，输出，过滤器，比较器，文件监控器功能-->
         <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.1</version>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commonIoVersion}</version>
         </dependency>
     </dependencies>
 
     <build>
             <plugins>
+                <!--指定Maven使用1.8JRE-->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
